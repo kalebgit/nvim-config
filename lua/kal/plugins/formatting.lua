@@ -12,6 +12,9 @@ return {
     typescriptreact = { "prettier" },
     svelte = { "prettier" },
     css = { "prettier" },
+    
+    clangd = {"prettier"},
+
     html = { "prettier" },
     json = { "prettier" },
     yaml = { "prettier" },
@@ -27,6 +30,7 @@ return {
       }
   }, 
   config = function()
+    local conform = require("conform")
     vim.keymap.set({ "n", "v" }, "<leader>mp", function()
       conform.format({
         lsp_fallback = true,

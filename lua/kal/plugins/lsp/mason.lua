@@ -21,7 +21,7 @@ return {
         "html",
         "lua_ls",
         "jdtls",
-        "clangd"
+        "clangd",
       },
     })
 
