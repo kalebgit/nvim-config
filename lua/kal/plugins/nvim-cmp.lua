@@ -4,6 +4,8 @@ return {
   dependencies = {
     "hrsh7th/cmp-buffer", 
     "hrsh7th/cmp-path",
+    --for the new noice ui 
+    "hrsh7th/cmp-cmdline",
     "L3MON4D3/LuaSnip",
     "saadparwaiz1/cmp_luasnip",
     "rafamadriz/friendly-snippets",
@@ -56,5 +58,17 @@ return {
         'confirm_done',
         cmp_autopairs.on_confirm_done()
       )
+    -- some luasnip options for snippets
+      local ls = require("luasnip")
+
+vim.keymap.set({"i"}, "<C-K>", function() ls.expand() end, {silent = true})
+vim.keymap.set({"i", "s"}, "<C-L>", function() ls.jump( 1) end, {silent = true})
+vim.keymap.set({"i", "s"}, "<C-J>", function() ls.jump(-1) end, {silent = true})
+
+vim.keymap.set({"i", "s"}, "<C-E>", function()
+	if ls.choice_active() then
+		ls.change_choice(1)
+	end
+end, {silent = true})
   end
 }

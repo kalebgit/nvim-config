@@ -25,8 +25,10 @@ return {
           }
         }
       }
-      require("telescope").load_extension("ui-select")
+      require('telescope').load_extension('todo-comments')
 
+      require("telescope").load_extension("ui-select")
+      require("telescope").load_extension("noice")
     end
   }
 }
